@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/forForms.css"></link>
+<link rel="stylesheet" type="text/css" href="css/reg.css"></link>
+<link rel="stylesheet" type="text/css" href="css/basic.css"></link>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+
+<title >registration form</title>
+</head>
+<body class="p1">
+<header>
+     <div>
+     <img class="icon" src="images/iconFarm.png" alt="icon" width="5%" height="5%">
+     <h2 >Famer Store</h2>
+     </div>
+</header>
+
+<div class="modal size">
+<form action="php/register.php" method="post" enctype="multipart/form-data">
+<h1 >Registration Form</h1>
+<table align="center">
+<tr>
+<td>
+Register as:
+</td>
+<td>
+<select required name='user' id="user">
+<option value="user">--Select User--</option>
+<option value="farmer">farmer</option>
+<option value="buyer">buyer</option>
+
+<input id="user_text" type = "hidden" name = "user_text" />
+</td>
+<td>
+Title:
+</td>
+<td>
+<select required name="title" id="title">
+<option value="title" >--Title--</option>
+<option value="Mr.">Mr.</option>
+<option value="Ms.">Ms.</option>
+<option value="Mrs.">Mrs.</option>
+</select>
+<input id="title_text" type = "hidden" name = "title_text"  />
+</td>
+</tr>
+<tr>
+<td>
+First Name:
+</td>
+<td>
+<input type="text" name="firstname" required>
+</td>
+<td>
+Middle Name:
+</td>
+<td>
+<input type="text" name="middlename" required>
+</td>
+</tr>
+<tr>
+<td>
+Last Name:
+</td>
+<td>
+<input type="text" name="lastname" required>
+</td>
+<td>
+Gender:
+</td>
+<td>
+<select required value="gender" name="gender" id="gender">
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+<input id="gender_text" type = "hidden" name = "gender_text"  />
+</td>
+</tr>
+<tr>
+<td>
+Date of Birth:
+</td>
+<td>
+<input class="list" type="date" name="date" required>
+</td>
+<td >
+Address(street):
+</td>
+<td>
+<textarea name="address" col="30" row="6" required></textarea>
+</td>
+</tr>
+<tr>
+<td>
+City/Village:
+</td>
+<td>
+<input type="text" name="city" required>
+</td>
+<td>
+Pin Code:
+</td>
+<td>
+<input type="text" name="pin" pattern="[0-9]{6}" required>
+</td>
+</tr>
+<tr>
+<td>
+Mobile No.:
+</td>
+<td>
+<select class="h3">
+<option>+91</option>
+</select>
+<input class="list" type="phone" name="phone" pattern="[0-9]{10}" required>
+</td>
+<td>
+Email:
+</td>
+<td>
+<input type="email" name="email" required>
+</td>
+</tr>
+<tr>
+	<td>
+		Password:
+	</td>
+	<td>
+		<input type="Password" name="password" id="password" required>
+	</td>
+	<td>
+		Confirm Password:
+	</td>
+	<td>
+		<input type="Password" name="confirm" id="confirm" required>
+	</td>
+	</tr>
+<tr>
+<td>
+Account Holder's Name<br>
+(as per bank details):
+</td>
+<td>
+<input type="text" name="holder" required>
+</td>
+<td>
+Bank Name:
+</td>
+<td>
+<input type="text" name="bankname" required>
+</td>
+</tr>
+<tr>
+<td>
+Bank Account No:
+</td>
+<td>
+<input type="digits" name="acc_no" pattern="[0-9]{12}" required>
+</td>
+<td>
+IFSC Code:
+</td>
+<td>
+<input type="text" name="ifsc" pattern="[0-9]{12}" required>
+</td>
+</tr>
+<tr>
+	<td><p>Upload Scanned Aadhar Card </p>
+	<p>or Pan Card :</p></td>
+	<td><input type="file" id="aadhar" name="aadhar" required></td>
+	
+	</tr>
+
+<tr>
+<td>
+</td>
+<td>
+<input type="submit" style="float:center-right" name="submit">
+</td>
+<td>
+<input type="reset"  style="float:center-right" name="reset">
+</td>
+<td>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<script type="text/javascript">
+	
+ 	$('#password,#confirm').on('blur',function(){	
+ 		if($('#confirm').val()!=""){
+ 		if($('#password').val() != $('#confirm').val()){
+ 			alert("password mismatched");
+ 		}
+ 		}
+ 	});
+
+ 	$('#user').on('change',function(){
+ 		document.getElementById('user_text').value = user.options[user.selectedIndex].text;
+       console.log("hello");
+ 	});
+
+ 	$('#title').on('change',function(){
+ 	  document.getElementById('title_text').value = title.options[title.selectedIndex].text;
+       console.log("hello");
+ 	});
+
+ 	$('#gender').on('change',function(){
+       document.getElementById('gender_text').value = gender.options[gender.selectedIndex].text;
+       console.log("hello");
+ 	});
+   /*function user(){
+       document.getElementById('user_text').value = user.options[user.selectedIndex].text;
+       console.log("hello");
+   }
+   function gender(){
+       document.getElementById('gender_text').value = gender.options[gender.selectedIndex].text;
+       console.log("hello");
+   }
+   function title()
+   {
+       document.getElementById('title_text').value = title.options[title.selectedIndex].text;
+       console.log("hello");
+   }*/
+</script>
+
+</body>
+</html>
+

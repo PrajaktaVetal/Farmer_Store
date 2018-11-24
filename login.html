@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+      <html>
+      <head>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="css/forForms.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/basic.css" type="text/css"></link>
+        <script type="text/javascript" src="js/responsiveNav.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <title>Login To farmer</title>
+        </head>
+        <body>
+        <header>
+          <img src="images/iconFarm.png" alt="icon" width="3%" height="10%">
+          <h2 >Farmer Store</h2>
+          <div id="google_translate_element" style="float:right"></div>
+          <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</header>
+
+      <div class="tab" id="tab">
+        <div id="change" class="change">
+        <ul>
+          <li>
+        <a onclick="loadBuyer()" id="buyer">Login Buyer</a></li>
+        <li>
+        <a onclick="loadFarmer()" id="farmer">Login Farmer</a></li>
+        <li>
+        <a onclick="loadAdmin()" id="admin">Login Admin</a></li>
+      </ul>
+      <div class="modal login1" id="modal">
+        <div class="login_form">
+        <h1>Buyer Login Here</h1>
+        <form action="login.php" method="post">
+        <input type="email" class="in" name="email_buyer" placeholder="Enter email">
+        <input type="password" class="in" name="pass_buyer" placeholder="Password">
+        <div class="button_cen">
+        <input type="submit" id="sign_in" name="buyer_log" value="Login"></div>
+        <div>
+        <a href="firstPage.html">forgot password</a>
+        <a href="register.html">New user? Register Here !</a>
+      </div>
+      
+      <div class="help">
+        <a href="guideline.html">E-learn</a>
+        <a href="about_us.html"> About us</a>
+        <a href="contact_us.html">Contact us </a>
+
+      </div>
+
+        <!--adding script for google sign in-->
+        
+      </form>
+    </div>
+  </div>
+    <div class="login2" id="login2">
+    <div class="login_form">
+        <h1>Farmer Login Here</h1>
+        <form action="login.php" method="post">
+        <input type="email" class="in" name="email_farmer" placeholder="Enter email">
+        <input type="password" class="in" name="pass_farmer" placeholder="Password">
+         <div class="button_cen">
+        <input type="submit" id="sign_in2" name="farmer_log" value="Login"></div>
+
+        <div>
+        <a href="firstPage.html">forgot password</a>
+        <a href="register.html">New user? Register Here !</a>
+      </div>
+      <div class="help">
+        <a href="guideline.html">E-learn</a>
+        <a href="about_us.html"> About us</a>
+        <a href="contact_us.html">Contact us </a>
+
+      </div>
+        <!--adding script for google sign in-->
+        
+      </form>
+    </div>
+  </div>
+  <div class="login3" id="login3">
+    <div class="login_form">
+        <h1>Admin Login Here</h1>
+        <form action="login.php" method="post">
+        <input type="email" class="in" name="email_admin" placeholder="Enter email">
+        <input type="password" class="in" name="pass_admin" placeholder="Password">
+         <div class="button_cen">
+        <input type="submit" id="sign_in3" name="admin_log" value="Login"></div>
+
+        <div>
+        <a href="firstPage.html">forgot password</a>
+        <a href="register.html">New user? Register Here !</a>
+      </div>
+      <div class="help">
+        <a href="guideline.html">E-learn</a>
+        <a href="about_us.html"> About us</a>
+        <a href="contact_us.html">Contact us </a>
+
+      </div>
+      
+        <!--adding script for google sign in-->
+        
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>
+
+   <script type="text/javascript">
+     function loadFarmer()
+     {
+      $("#modal").hide();
+      $("#login3").hide();
+      $("#login2").show();
+     document.getElementById("farmer").style.background="#558b2f";
+     document.getElementById("farmer").style.color="white";
+
+
+
+    document.getElementById("admin").style.background="#f9fbe7";
+    document.getElementById("admin").style.color="black";
+    document.getElementById("buyer").style.background="#f9fbe7";
+    document.getElementById("buyer").style.color="black";
+      console.log("hello");
+     }
+
+     function loadAdmin(){
+      $("#modal").hide();
+      $("#login2").hide();
+      $("#login3").show();
+      document.getElementById("admin").style.background="#558b2f";
+      document.getElementById("admin").style.color ="white";
+
+      document.getElementById("farmer").style.background="#f9fbe7";
+    document.getElementById("farmer").style.color="black";
+    document.getElementById("buyer").style.background="#f9fbe7";
+    document.getElementById("buyer").style.color="black";
+     
+     
+
+     }
+     function loadBuyer()
+     {
+      $("#login3").hide();
+      $("#login2").hide();
+      $("#modal").show();
+      document.getElementById("buyer").style.background="#558b2f";
+      document.getElementById("buyer").style.color="white";
+
+      document.getElementById("farmer").style.background="#f9fbe7";
+    document.getElementById("farmer").style.color="black";
+    document.getElementById("admin").style.background="#f9fbe7";
+    document.getElementById("admin").style.color="black";
+     
+     }
+   </script>
+      </body>
+      </html>
